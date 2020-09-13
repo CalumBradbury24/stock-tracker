@@ -7,4 +7,22 @@
     padding-right: 25px;
 
   }
+
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1.5fr;
+    gap: 1px 1px;
+    grid-template-areas:
+      "Pie Chart"
+      "Table Table";
+  }
+  
+  .Table { grid-area: Table; }
+  
+  .Chart { grid-area: Chart; }
+  
+  .Pie { grid-area: Pie; }
+  
 }

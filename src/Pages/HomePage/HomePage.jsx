@@ -10,7 +10,12 @@ const HomePage = ({ signOut }) => {
        <CustomLink linkTo={'/'} route={signOut} text={'Sign Out'}/>
       </span>
       <div className ='content'>
-        <StockTable />
+      <div class="grid-container">
+  <div class="Table">  <StockTable /></div>
+  <div class="Chart"></div>
+  <div class="Pie"></div>
+</div>
+      
       </div>
     </div>
   );

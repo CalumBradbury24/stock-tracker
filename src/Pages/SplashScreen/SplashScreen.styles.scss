@@ -4,6 +4,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+  background: url('../../assets/background.jpg') no-repeat;  
+  background-size: cover;
+
+  .welcome{
+    color: white;
+    font-size: 5rem;
+  }
 
 }

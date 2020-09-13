@@ -15,17 +15,18 @@ const App = ({ user, signOut, signInWithGoogle }) => {
   return (
     <div>
       <Router>
-        {user ? (
+        {!user ? (
+         <Route
+           
+         path="/"
+         render={() => <SplashScreen signInWithGoogle={signInWithGoogle} />}
+       /> 
+        ) : (
+          
           <Route
             exact
             path="/home"
             render={() => <HomePage signOut={signOut} />}
-          />
-        ) : (
-          <Route
-            exact
-            path="/"
-            render={() => <SplashScreen signInWithGoogle={signInWithGoogle} />}
           />
         )}
       </Router>
