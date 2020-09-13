@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import withFirebaseAuth from "react-with-firebase-auth";
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import firebaseConfig from "./firebase/firebase.utils";
+import SplashScreen from "./Pages/SplashScreen/SplashScreen";
+import HomePage from "./Pages/HomePage/HomePage";
 
-function App() {
+import "./App.css";
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const App = ({ user, signOut, signInWithGoogle }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        {user ? (
+          <Route
+            exact
+            path="/home"
+            render={() => <HomePage signOut={signOut} />}
+          />
+        ) : (
+          <Route
+            exact
+            path="/"
+            render={() => <SplashScreen signInWithGoogle={signInWithGoogle} />}
+          />
+        )}
+      </Router>
     </div>
   );
-}
+};
 
-export default App;
+const firebaseAppAuth = firebaseApp.auth();
+
+const providers = {
+  googleProvider: new firebase.auth.GoogleAuthProvider(),
+};
+
+export default withFirebaseAuth({
+  providers,
+  firebaseAppAuth,
+})(App);
