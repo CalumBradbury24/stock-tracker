@@ -1,13 +1,11 @@
 .HomePage {
   height: 100vh;
-  
+
   .signout {
     display: flex;
     justify-content: flex-end;
     padding-right: 25px;
-
   }
-
 
   .grid-container {
     display: grid;
@@ -18,11 +16,19 @@
       "Pie Chart"
       "Table Table";
   }
-  
-  .Table { grid-area: Table; }
-  
-  .Chart { grid-area: Chart; }
-  
-  .Pie { grid-area: Pie; }
-  
+
+  .Table {
+    grid-area: Table;
+  }
+
+  .Chart {
+    grid-area: Chart;
+  }
+
+  .Pie {
+    grid-area: Pie;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
 }
