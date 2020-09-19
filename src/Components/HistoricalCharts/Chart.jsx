@@ -9,8 +9,8 @@ const Chart = ({ ticker }) => {
     if (ticker === "") {
       return;
     }
-    //const url = `${IEX.base_url}/stock/${ticker}/chart/5y?token=${IEX.api_token}`;//Real Url
-    const url = `https://sandbox.iexapis.com/stable/stock/${ticker}/chart/3m?token=Tpk_8d876a2222b54ec9977c8c8bf5045c07`; //Sandbox url for testing
+    const url = `${IEX.base_url}/stock/${ticker}/chart/5y?token=${IEX.api_token}`;//Real Url
+    //const url = `https://sandbox.iexapis.com/stable/stock/${ticker}/chart/3m?token=Tpk_8d876a2222b54ec9977c8c8bf5045c07`; //Sandbox url for testing
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

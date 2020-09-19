@@ -8,8 +8,8 @@ const Row = ({ ticker, numberOfShares }) => {
   const [time, setTime] = useState("");
 
   useEffect(() => {
-    const url = `https://sandbox.iexapis.com/stable/stock/${ticker}/intraday-prices?chartLast=1&token=Tpk_8d876a2222b54ec9977c8c8bf5045c07`;//Sandbox url for testing
-   // const url = `${IEX.base_url}/stock/${ticker}/intraday-prices?chartLast=1&token=${IEX.api_token}`; //Url for real data
+  // const url = `https://sandbox.iexapis.com/stable/stock/${ticker}/intraday-prices?chartLast=1&token=Tpk_8d876a2222b54ec9977c8c8bf5045c07`;//Sandbox url for testing
+    const url = `${IEX.base_url}/stock/${ticker}/intraday-prices?chartLast=1&token=${IEX.api_token}`; //Url for real data
    const yesterdaysDateUrl = `${IEX.base_url}/stock/${ticker}/previous?chartLast=1&token=${IEX.api_token}`;
     fetch(url)
       .then((res) => res.json())
