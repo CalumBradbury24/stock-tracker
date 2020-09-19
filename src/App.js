@@ -11,7 +11,7 @@ import "./App.css";
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-const App = ({ user, signOut, signInWithGoogle }) => {
+const App = ({ signOut, signInWithGoogle }) => {
   return (
     <Router className = 'App'>
       <Switch>
@@ -37,19 +37,3 @@ export default withFirebaseAuth({
   firebaseAppAuth,
 })(App);
 
-/*
-{!user ? (
-          <Route
-            path="/"
-            render={() => <SplashScreen signInWithGoogle={signInWithGoogle} />}
-          />
-        ) : (
-          <Route
-            exact
-            path="/home"
-            render={() => <HomePage signOut={signOut} />}
-          />
-        )}
-
-
-*/

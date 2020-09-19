@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IEX } from "../IEX/IEX";
 import "./Row.styles.scss";
-//get all historical data
-//url = 'https://cloud.iexapis.com/stable/stock/aapl/intraday-prices?token=pk_58d271c8112c441cbf88f6c845f468b2'
 
 const Row = ({ ticker, numberOfShares }) => {
   const [price, setPrice] = useState("");
@@ -10,12 +8,13 @@ const Row = ({ ticker, numberOfShares }) => {
   const [time, setTime] = useState("");
 
   useEffect(() => {
-    const url = `${IEX.base_url}/stock/${ticker}/intraday-prices?chartLast=1&token=${IEX.api_token}`;
-    const yesterdaysDateUrl = `${IEX.base_url}/stock/${ticker}/previous?chartLast=1&token=${IEX.api_token}`;
+    const url = `https://sandbox.iexapis.com/stable/stock/${ticker}/intraday-prices?chartLast=1&token=Tpk_8d876a2222b54ec9977c8c8bf5045c07`;//Sandbox url for testing
+   // const url = `${IEX.base_url}/stock/${ticker}/intraday-prices?chartLast=1&token=${IEX.api_token}`; //Url for real data
+   const yesterdaysDateUrl = `${IEX.base_url}/stock/${ticker}/previous?chartLast=1&token=${IEX.api_token}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+       // console.log(data);
         if (data[data.length - 1].close === null) {
           setPrice("Couldn't fetch");
           setTime("Couldn't fetch");

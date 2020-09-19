@@ -6,20 +6,26 @@ import {
   setTwoValue,
   setThreeValue,
   setFourValue,
+  setFiveValue,
 } from "../../Redux/actions";
+
+import './StockTable.styles.scss';
 
 const StockTable = ({
   onShareOneChange,
   onShareTwoChange,
   onShareThreeChange,
   onShareFourChange,
+  onShareFiveChange,
   numberOfShareOne,
   numberOfShareTwo,
   numberOfShareThree,
   numberOfShareFour,
+  numberOfShareFive,
 }) => {
   return (
-    <div className="limiter">
+    <React.Fragment>
+      <h1 className ='table-title'>My Portfolio</h1>
       <div className="container-table100">
         <div className="wrap-table100">
           <table>
@@ -30,7 +36,7 @@ const StockTable = ({
                 <th className="column">Time</th>
                 <th className="column">Result</th>
                 <th className="column">Value($)</th>
-                <th className="column">Quantity</th>
+                <th className="column">Quantity Of Shares</th>
               </tr>
             </thead>
             <tbody>
@@ -43,7 +49,7 @@ const StockTable = ({
                 <td className="form__group field">
                   <input
                     className="form__field"
-                    placeholder="Enter number of shares held"
+                    placeholder={numberOfShareOne} 
                     onChange={onShareOneChange}
                     type="number"
                     name="name"
@@ -60,7 +66,7 @@ const StockTable = ({
                 <td className="form__group field">
                   <input
                     className="form__field"
-                    placeholder="Enter number of shares held"
+                    placeholder={numberOfShareTwo}
                     onChange={onShareTwoChange}
                     type="number"
                     name="name"
@@ -77,7 +83,7 @@ const StockTable = ({
                 <td className="form__group field">
                   <input
                     className="form__field"
-                    placeholder="Enter number of shares held"
+                    placeholder={numberOfShareThree}
                     onChange={onShareThreeChange}
                     type="number"
                     name="name"
@@ -94,7 +100,7 @@ const StockTable = ({
                 <td className="form__group field">
                   <input
                     className="form__field"
-                    placeholder="Enter number of shares held"
+                    placeholder={numberOfShareFour}
                     onChange={onShareFourChange}
                     type="number"
                     name="name"
@@ -102,20 +108,40 @@ const StockTable = ({
                   />
                 </td>
               </tr>
+              <tr>
+                <Row
+                  ticker="BNS"
+                  className="column"
+                  numberOfShares={numberOfShareFive}
+                />
+                <td className="form__group field">
+                  <input
+                    className="form__field"
+                    placeholder={numberOfShareFive}
+                    onChange={onShareFiveChange}
+                    type="number"
+                    name="name"
+                    id="name"
+                  />
+                </td>
+              </tr>
+              <tr> 
+              </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </div>
+      </React.Fragment>
   );
 };
-//Maybe have dividend section where you can input $ per share and calculate dividends
+
 const mapDispatchToProps = (dispatch) => {
   return {
     onShareOneChange: (event) => dispatch(setOneValue(event.target.value)),
     onShareTwoChange: (event) => dispatch(setTwoValue(event.target.value)),
     onShareThreeChange: (event) => dispatch(setThreeValue(event.target.value)),
     onShareFourChange: (event) => dispatch(setFourValue(event.target.value)),
+    onShareFiveChange: (event) => dispatch(setFiveValue(event.target.value)),
   };
 };
 
@@ -125,6 +151,7 @@ const mapStateToProps = (state) => {
     numberOfShareTwo: state.shares.numberOfShareTwo,
     numberOfShareThree: state.shares.numberOfShareThree,
     numberOfShareFour: state.shares.numberOfShareFour,
+    numberOfShareFive: state.shares.numberOfShareFive,
   };
 };
 

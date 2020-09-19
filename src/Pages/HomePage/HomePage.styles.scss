@@ -1,10 +1,12 @@
 .HomePage {
-  height: 100vh;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.938);
 
   .signout {
     display: flex;
     justify-content: flex-end;
     padding-right: 25px;
+    padding-top: 10px;
   }
 
   .grid-container {
@@ -23,6 +25,9 @@
 
   .Chart {
     grid-area: Chart;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .Pie {

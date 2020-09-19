@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Stock Tracker",
+  "name": "Stock Tracker by Calum Bradbury",
   "icons": [
     {
       "src": "favicon.ico",

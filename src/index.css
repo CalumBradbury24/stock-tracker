@@ -5,11 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h2{
+  color: white;
 }
 
 a{
@@ -24,12 +29,6 @@ a:hover{
 
 .container-table100 {
   width: 100%;
- /* background: #c850c0;
-  background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
-  background: -o-linear-gradient(45deg, #4158d0, #c850c0);
-  background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
-  background: linear-gradient(45deg, #4158d0, #c850c0);
-*/
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -43,7 +42,7 @@ a:hover{
 table {
   border-spacing: 1;
   border-collapse: collapse;
-  background: white;
+
   border-radius: 10px;
   overflow: hidden;
   width: 100%;
@@ -55,10 +54,11 @@ table * {
 }
 table td, table th {
   padding-left: 8px;
+  color: white;
 }
 table thead tr {
   height: 60px;
-  background: #36304a;
+  background: #3f0af0;
 }
 table tbody tr {
   height: 50px;
@@ -76,8 +76,8 @@ table td, table th {
   width: 260px;
 }
 tbody tr:hover {
-  color: #555555;
-  background-color: #f5f5f5;
+
+  background-color: #272626;
   cursor: pointer;
 }
 

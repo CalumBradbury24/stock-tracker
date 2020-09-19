@@ -6,7 +6,7 @@ $gray: #9b9b9b;
   position: relative;
   padding: 15px 0 0;
   margin-top: 10px;
- // width: 50%;
+
 }
 
 .form__field {
@@ -16,20 +16,22 @@ $gray: #9b9b9b;
   border-bottom: 2px solid $gray;
   outline: 0;
   font-size: 1.3rem;
-  color: $gray;
+  color: $white;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
+  text-align: center;
 
-  &::placeholder {
-    color: transparent;
-  }
 
   &:placeholder-shown ~ .form__label {
     font-size: 1.3rem;
     cursor: text;
     top: 20px;
   }
+ ::placeholder{
+  color: white;
+  opacity: 1;
+ }
 }
 
 .form__label {

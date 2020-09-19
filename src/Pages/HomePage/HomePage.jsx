@@ -1,7 +1,8 @@
 import React from "react";
 import CustomLink from "../../Components/CustomLink/CustomLink";
 import StockTable from "../../Components/StockTable/StockTable";
-import PieVis from '../../Components/PieChart/Pie';
+import PieVis from "../../Components/PieChart/Pie";
+import HistoricalCharts from "../../Components/HistoricalCharts/HistoricalCharts";
 import "./HomePage.styles.scss";
 
 const HomePage = ({ signOut }) => {
@@ -13,11 +14,14 @@ const HomePage = ({ signOut }) => {
       <div className="content">
         <div className="grid-container">
           <div className="Table">
-            {" "}
             <StockTable />
           </div>
-          <div className="Chart"></div>
-          <div className="Pie"><PieVis/></div>
+          <div className="Chart">
+            <HistoricalCharts />
+          </div>
+          <div className="Pie">
+            <PieVis />
+          </div>
         </div>
       </div>
     </div>
